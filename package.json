@@ -1,5 +1,8 @@
 {
   "name": "je-2",
+  "engines" : {
+    "node": "16.15.1"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
