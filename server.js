@@ -74,7 +74,7 @@ app.get('/ws2/seed', (req, res)=>{
 
 // Update
 // PUT /todo/:id
-app.put('/todo/:id', (req, res) => {
+app.put('/ws2/:id', (req, res) => {
     if(req.body.completed === 'on'){
         req.body.completed = true;
     }else{
@@ -87,12 +87,12 @@ app.put('/todo/:id', (req, res) => {
 
 // Edit
 // GET /todo/:id/edit
-app.get('/todo/:id/edit', (req, res) => {
+app.get('/ws2/:id/edit', (req, res) => {
     Ws2.findById(req.params.id, (error, thisWs2) => {
         res.render(
             'edit.ejs',
             {
-                todows2: thisWs2
+                ws2: thisWs2
             }
         )
     })
@@ -102,7 +102,7 @@ app.get('/todo/:id/edit', (req, res) => {
 // Create
 //POST /todo
     //make post
-    app.post('/todo', (req,res) => {
+    app.post('/ws2', (req,res) => {
     if(req.body.completed === 'on'){
         req.body.completed = true;
     }else{
