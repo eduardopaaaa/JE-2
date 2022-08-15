@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+<body>
+    <h1><%=ws2.name%> page</h1>
+    <p><%=ws2.name %></p>
+    <p><%=ws2.priority %></p>
+    <p><%=ws2.description%></p>
+    <% if (ws2.completed === true) { %>
+        <p>Item has been completed </p>
+    <% } else { %>
+        <p>Item ETC  <%=ws2.date%></p>
+    <% } %>
+    <button><a href="/ws2">Return to Ws2 App</a></button>
+</body>
+</html>

@@ -6,6 +6,9 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Ws2 = require('./models/schema.js')
+const seed = require('./models/seed.js')
+
 require('dotenv').config()
 //___________________
 //Port
@@ -56,3 +59,101 @@ app.get('/' , (req, res) => {
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+
+
+
+
+/*==================Budget Seed====================*/
+
+app.get('/ws2/seed', (req, res)=>{
+    Ws2.create(seed, (error, data) => {})  
+    res.redirect('/ws2'); 
+})
+
+
+// Update
+// PUT /todo/:id
+app.put('/todo/:id', (req, res) => {
+    if(req.body.completed === 'on'){
+        req.body.completed = true;
+    }else{
+        req.body.completed = false;
+    }
+    Ws2.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedNewWs2) => {
+        res.redirect('/ws2')
+    })
+})
+
+// Edit
+// GET /todo/:id/edit
+app.get('/todo/:id/edit', (req, res) => {
+    Ws2.findById(req.params.id, (error, thisWs2) => {
+        res.render(
+            'edit.ejs',
+            {
+                todows2: thisWs2
+            }
+        )
+    })
+})
+
+
+// Create
+//POST /todo
+    //make post
+    app.post('/todo', (req,res) => {
+    if(req.body.completed === 'on'){
+        req.body.completed = true;
+    }else{
+        req.body.completed = false;
+    }
+        Ws2.create(req.body, (error, newWs2) => {
+            res.redirect('/ws2')
+        })
+    })
+
+
+
+// Destroy
+// DELETE /todo/:id
+app.delete('/ws2/:id', (req, res) => {
+    Ws2.findByIdAndRemove(req.params.id, (error, notWs2) => {
+        res.redirect('/ws2')
+    })
+})
+
+//New
+//GET /todo/new
+    app.get('/ws2/new', (req, res)=>{
+        res.render('new.ejs');
+    });
+
+
+//Show
+//Get /todo/:index
+    app.get('/ws2/:id', (req, res) => {
+        Ws2.findById(req.params.id, (error, ws2Item) => {
+            res.render(
+                'show.ejs',
+                {
+                    ws2: ws2Item
+                }
+            )
+        })
+    })
+
+
+
+// Index
+//GET todo
+    app.get('/ws2', (req, res) => {
+        Ws2.find({}, (error, allWs2) => {
+            res.render(
+                'index.ejs',
+                {
+                    ws2: allWs2
+                }
+            )
+        })
+    })

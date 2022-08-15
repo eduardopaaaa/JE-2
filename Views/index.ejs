@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+<body>
+    <h1>Ws2 App</h1>
+    <nav>
+        <a href="/ws2/new"> Create New Item</a>
+    </nav>
+    <table class="table">
+        <% for (let i = 0; i < ws2.length; i++) { %>
+        <tr>
+            <% if (ws2[i].completed === false) { %>
+                <td><%= ws2[i].date %>
+                    <td><%=ws2[i].completed%></td>
+                <td>
+                    <a href="/ws2/<%=ws2[i].id%>">
+                        <%= ws2[i].name %>
+                    </a>
+                </td>
+                <td>
+                    <button class="btn btn-outline-primary"><a href="/ws2/<%=ws2[i].id%>/edit">Edit</a></button>
+                </td>
+                <td>
+                    <form action="/ws2/<%=ws2[i].id%>?_method=DELETE" method="POST">
+                        <input class="btn btn-danger" type="submit" value="DELETE" />
+                    </form>
+                </td>
+            <% } else { %>
+            <td><%= ws2[i].date %>
+                <td><%=ws2[i].completed%></td>
+            <td>
+                    <%= ws2[i].name %>
+            </td>
+            <td>
+                <button class="btn btn-outline-secondary disabled">Edit</button>
+            </td>
+            <td>
+                <form action="/ws2/<%=ws2[i].id%>?_method=DELETE" method="POST">
+                    <input class="btn btn-danger" type="submit" value="DELETE" />
+                </form>
+            </td>
+            <% } %>
+        
+        </tr>
+        <% } %>
+    </table>
+    
+</body>
+</html>

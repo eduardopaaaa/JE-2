@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+<body>
+    <h1> Edit Item</h1>
+    <form form-groupaction="/ws2/<%=ws2.id%>?_method=PUT" method="POST">
+        <input type="text" class="form-control" name="name" value="<%=ws2.name%>" placeholder="task"/><br/>
+        <input type="text" class="form-control" name="date" value="<%=ws2.date%>" placeholder="date"/><br/>
+        <input type="text" class="form-control" name="description" value="<%=ws2.description%>" placeholder="description"/><br/>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="completed"
+            <% if(ws2.completed === true ){ %>
+                checked
+            <% } %>    
+            >
+            <label class="form-check-label">
+                Check Box = Item Completed
+              </label>
+        </div>
+        <br/>
+        <input class="btn btn-success" type="submit" value="Submit Changes"/>
+        
+</body>
+</html>
