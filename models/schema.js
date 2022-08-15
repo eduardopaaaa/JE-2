@@ -7,7 +7,7 @@ const ws2Schema = new mongoose.Schema({
     priority: {type: String, require: true},
     description: {type: String, require: true},
     completed: {type: Boolean,},
-    startdate: {type: String}
+    date: {type: String}
 });
 
 

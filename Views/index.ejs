@@ -4,19 +4,21 @@
         <%- include('partials/head.ejs') %>
     </head>
 <body>
-    <h1>Ws2 App</h1>
+    <h1>Update Board</h1>
     <nav>
-        <a href="/ws2/new"> Create New Item</a>
+        <a href="/ws2/new"> Create New Item</a> 
+        <a href="/ws2/home">| Home</a> 
     </nav>
     <table class="table">
         <% for (let i = 0; i < ws2.length; i++) { %>
         <tr>
             <% if (ws2[i].completed === false) { %>
-                <td><%= ws2[i].date %> 
+                <td><%=ws2[i].priority %>
                     <td><%=ws2[i].completed%></td>
                 <td>
                     <a href="/ws2/<%=ws2[i].id%>">
                         <%= ws2[i].name %>
+
                     </a>
                 </td>
                 <td>

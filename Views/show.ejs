@@ -4,15 +4,15 @@
         <%- include('partials/head.ejs') %>
     </head>
 <body>
-    <h1><%=ws2.name%> page</h1>
-    <p><%=ws2.name %></p>
-    <p><%=ws2.priority %></p>
-    <p><%=ws2.description%></p>
+    <h1>UB Item: <%=ws2.name %></h1>
+    <p>Item Name: <%=ws2.name %></p>
+    <p>Priority: <%=ws2.priority %></p>
+    <p>Task: <%=ws2.description%></p>
     <% if (ws2.completed === true) { %>
         <p>Item has been completed </p>
     <% } else { %>
-        <p>Item ETC  <%=ws2.date%></p>
+        <p>Estimated Completion Date  <%=ws2.date%></p>
     <% } %>
-    <button><a href="/ws2">Return to Ws2 App</a></button>
+    <button><a href="/ws2">Return to Update Board</a></button>
 </body>
 </html>

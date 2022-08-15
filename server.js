@@ -130,6 +130,13 @@ app.delete('/ws2/:id', (req, res) => {
     });
 
 
+//New
+//GET /todo/new
+app.get('/ws2/home', (req, res)=>{
+  res.render('home.ejs');
+});
+
+
 //Show
 //Get /todo/:index
     app.get('/ws2/:id', (req, res) => {
