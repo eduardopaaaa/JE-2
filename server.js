@@ -132,12 +132,16 @@ app.delete('/ws2/:id', (req, res) => {
 
 //New
 //GET /todo/new
-app.get('/ws2/home', (req, res)=>{
-  res.render('home.ejs');
+app.get('/ws2/resume', (req, res)=>{
+  res.render('resume.ejs');
 });
 
 app.get('/ws2/cover', (req, res)=>{
   res.render('cover.ejs');
+});
+
+app.get('/ws2/search', (req, res)=>{
+  res.render('search.ejs');
 });
 
 //Show
