@@ -1,6 +1,6 @@
 {
   "name": "je-2",
-  "engines" : {
+  "engines": {
     "node": "16.15.1"
   },
   "version": "1.0.0",

@@ -136,6 +136,9 @@ app.get('/ws2/home', (req, res)=>{
   res.render('home.ejs');
 });
 
+app.get('/ws2/cover', (req, res)=>{
+  res.render('cover.ejs');
+});
 
 //Show
 //Get /todo/:index
