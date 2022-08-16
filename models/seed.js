@@ -4,6 +4,7 @@ module.exports = [
         priority: "High",
         description: "Take out office and kitchen trash",
         completed: true,
+        rcode: "",
         date: "08/14/2022"
     },
     {
@@ -11,6 +12,7 @@ module.exports = [
         priority: "Low",
         description: "Wash dark colored clothes",
         completed: false,
+        rcode: "",
         date: "08/14/2022"
   }
 ]
