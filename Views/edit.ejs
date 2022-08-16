@@ -9,7 +9,7 @@
     </head>
 <body>
     <h1> Edit Item</h1>
-    <form form-groupaction="/ws2/<%=ws2.id%>?_method=PUT" method="POST">
+    <form form-group action="/ws2/<%=ws2.id%>?_method=PUT" method="POST">
         <input type="text" class="form-control" name="name" value="<%=ws2.name%>" placeholder="task"/><br/>
         <input type="date" class="form-control" name="date" value="<%=ws2.date%>" placeholder="date"/><br/>
         <input type="text" class="form-control" name="description" value="<%=ws2.description%>" placeholder="description"/><br/>
@@ -25,6 +25,7 @@
         </div>
         <br/>
         <input class="btn btn-success" type="submit" value="Submit Changes" />
+    
         
 </body>
 </html>
