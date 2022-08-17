@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+        <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+        <style>
+            body{font-family: "Iceland", cursive}
+            </style>
+    </head>
+<body>
+    <h1>Bug Fixes: <%=ws22.name2 %></h1>
+    <p>Bug Name: <%=ws22.name2 %></p>
+    <p>Priority: <%=ws22.priority2 %></p>
+    <p>Task: <%=ws22.description2%></p>
+    <p>Raw Code: <%=ws22.rcode2%></p>
+    <% if (ws22.completed2 === true) { %>
+        <p>Bug Fixed </p>
+    <% } else { %>
+        <p>Estimated Fix Date  <%=ws22.date2%></p>
+    <% } %>
+    <button><a href="/ws22">Return to Bug Fix Board</a></button>
+</body>
+</html>

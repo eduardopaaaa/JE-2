@@ -7,7 +7,9 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const Ws2 = require('./models/schema.js')
+const Ws22 = require('./models/schema2.js')
 const seed = require('./models/seed.js')
+const seed2 = require('./models/seed2.js')
 
 require('dotenv').config()
 //___________________
@@ -52,7 +54,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.render('cover.ejs');
+  res.render('/ws2/cover');
 });
 
 //___________________
@@ -71,6 +73,10 @@ app.get('/ws2/seed', (req, res)=>{
     res.redirect('/ws2'); 
 })
 
+app.get('/ws22/seed2', (req, res)=>{
+  Ws22.create(seed2, (error, data) => {})  
+  res.redirect('/ws22'); 
+})
 
 // Update
 // PUT /todo/:id
@@ -85,6 +91,16 @@ app.put('/ws2/:id', (req, res) => {
     })
 })
 
+app.put('/ws22/:id', (req, res) => {
+  if(req.body.completed2 === 'on'){
+      req.body.completed2 = true;
+  }else{
+      req.body.completed2 = false;
+  }
+  Ws22.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedNewWs22) => {
+      res.redirect('/ws22')
+  })
+})
 
 // Edit
 // GET /todo/:id/edit
@@ -99,7 +115,16 @@ app.get('/ws2/:id/edit', (req, res) => {
     })
 })
 
-
+app.get('/ws22/:id/edit2', (req, res) => {
+  Ws22.findById(req.params.id, (error, thisWs22) => {
+      res.render(
+          'edit2.ejs',
+          {
+              ws22: thisWs22
+          }
+      )
+  })
+})
 
 // Create
 //POST /todo
@@ -115,7 +140,16 @@ app.get('/ws2/:id/edit', (req, res) => {
         })
     })
 
-
+    app.post('/ws22', (req,res) => {
+      if(req.body.completed2 === 'on'){
+          req.body.completed2 = true;
+      }else{
+          req.body.completed2 = false;
+      }
+          Ws22.create(req.body, (error, newWs22) => {
+              res.redirect('/ws22')
+          })
+      })
 
 // Destroy
 // DELETE /todo/:id
@@ -125,12 +159,21 @@ app.delete('/ws2/:id', (req, res) => {
     })
 })
 
+app.delete('/ws22/:id', (req, res) => {
+  Ws22.findByIdAndRemove(req.params.id, (error, notWs22) => {
+      res.redirect('/ws22')
+  })
+})
+
 //New
 //GET /todo/new
     app.get('/ws2/new', (req, res)=>{
         res.render('new.ejs');
     });
 
+    app.get('/ws22/new2', (req, res)=>{
+      res.render('new2.ejs');
+  });
 
 //New
 //GET /todo/new
@@ -159,7 +202,16 @@ app.get('/ws2/search', (req, res)=>{
         })
     })
 
-
+    app.get('/ws22/:id', (req, res) => {
+      Ws22.findById(req.params.id, (error, ws22Item) => {
+          res.render(
+              'show2.ejs',
+              {
+                  ws22: ws22Item
+              }
+          )
+      })
+  })
 
 // Index
 //GET todo
@@ -173,3 +225,14 @@ app.get('/ws2/search', (req, res)=>{
             )
         })
     })
+
+    app.get('/ws22', (req, res) => {
+      Ws22.find({}, (error, allWs22) => {
+          res.render(
+              'index2.ejs',
+              {
+                  ws22: allWs22
+              }
+          )
+      })
+  })
