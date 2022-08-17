@@ -54,7 +54,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.render('this is awful');
+  res.render('/ws2');
 });
 
 //___________________
@@ -190,7 +190,7 @@ app.get('/ws2/search', (req, res)=>{
 });
 
 app.get('/ws2/learn', (req, res)=>{
-  res.render('learn.ejs');
+  res.render('search.ejs');
 });
 
 //Show
