@@ -3,15 +3,17 @@
     <head>
         <%- include('partials/head.ejs') %>
         <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="/css/comment.css" rel="stylesheet">
         <style>
             body{font-family: "Iceland", cursive}
             </style>
+
     </head>
 <body style= "background-color:whitesmoke";>
     <h1>Bug Fixes</h1>
     <nav>
         <a href="/ws22/new22"> Create Item</a> 
-        <a href="/ws2/cover">| Home</a> 
+        <a href="/ws2/cover">Home</a> 
     </nav>
     <table class="table">
         <% for (let i = 0; i < ws22.length; i++) { %>
@@ -53,6 +55,76 @@
         </tr>
         <% } %>
     </table>
+                                <script> const showContainers = document.querySelectorAll('.show-replies');
+
+                                showContainers.forEach(btn => btn.addEventListener('click', (e) => {
+                                    let parentContainer = e.target.closest('.comment__container');
+                                    let _id = parentContainer.id;
+                                    if (_id) {
+                                        let childrenContainer = parentContainer.querySelectorAll('[dataset=${_id}]');
+                                    }
+                                    childrenContainer.forEach(child => child.classList.toggle('opened'));
+                                })); 
+                                </script>
+    <div class="container">
+        <div class="comment__container opened" id="first">
+            <div class="comment__card">
+                <h3 class="comment__title">First Comment</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis veniam soluta delectus numquam, repellat amet, dolore, aliquid voluptatum sint alias repudiandae incidunt? Totam, saepe! Voluptatem magnam recusandae in vel!
+                </p>
+                <div class="comment__card-footer">
+                    <div>Likes</div>
+                    <div>Dislikes</div>
+                    <div class="show-replies">Replies 0</div>
+
+                </div>
+            </div>
+        </div>
+            <div class="comment__container" dataset="firstr" id="freply">
+
+                <div class="comment__card">
+                    <h3 class="comment__title">First Reply to First Comment</h3>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis veniam soluta delectus numquam, repellat amet, dolore, aliquid voluptatum sint alias repudiandae incidunt? Totam, saepe! Voluptatem magnam recusandae in vel!
+                 </p>
+                    <div class="comment__card-footer">
+                        <div>Likes</div>
+                        <div>Dislikes</div>
+                        <div class="show-replies">Replies 1 </div>
+
+                        </div>
+                    </div>
+                    <div class="comment__card" dataset="secr" id="secreply">
+                        <h3 class="comment__title">Second Reply to First Comment</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis veniam soluta delectus numquam, repellat amet, dolore, aliquid voluptatum sint alias repudiandae incidunt? Totam, saepe! Voluptatem magnam recusandae in vel!
+                        </p>
+                        <div class="comment__card-footer">
+                            <div>Likes</div>
+                            <div>Dislikes</div>
+                            <div class="show-replies">Replies 2 </div>
+
+                </div>
+            </div>
+            <div class="comment__container">
+                <div class="comment__card" dataset="threp" id="thireply">
+                    <h3 class="comment__title">Third Reply to first Comment</h3>
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quis veniam soluta delectus numquam, repellat amet, dolore, aliquid voluptatum sint alias repudiandae incidunt? Totam, saepe! Voluptatem magnam recusandae in vel!
+                 </p>
+                    <div class="comment__card-footer">
+                        <div>Likes</div>
+                        <div>Dislikes</div>
+                        <div class="show-replies">Replies 3 </div>
+
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

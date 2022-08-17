@@ -7,12 +7,12 @@ const ws2Schema = new mongoose.Schema({
     priority: {type: String, require: true},
     description: {type: String, require: true},
     rcode: {type: String, require: true},
-    completed: {type: Boolean,},
-    date: {type: String}
+    completed: {type: Boolean},
+    date: {type: String},
 });
 
 
 
-const Ws2 = mongoose.model('Ws2', ws2Schema)
+const Ws2 = mongoose.model('Ws2', ws2Schema);
 
 module.exports = Ws2;
