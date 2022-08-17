@@ -59,8 +59,8 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 
-app.get('/ws2/cover', (req, res) => {
-  res.redirect('cover.ejs');
+app.get('/', (req, res) => {
+  res.send('Hello World');
 });
 
 // app.get('/ws2/cover', (req, res)=>{
@@ -193,7 +193,7 @@ app.get('/ws2/search', (req, res)=>{
 });
 
 app.get('/ws2/learn', (req, res)=>{
-  res.render('search.ejs');
+  res.render('learn.ejs');
 });
 
 //Show
