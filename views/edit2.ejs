@@ -10,12 +10,12 @@
 <body>
     <h1> Edit Bug</h1>
     <form form-group action="/ws22/<%=ws22.id%>?_method=PUT" method="POST">
-        <input type="text" class="form-control" name="name2" value="<%=ws22.name2%>" placeholder="task"/><br/>
-        <input type="date" class="form-control" name="date2" value="<%=ws22.date2%>" placeholder="date"/><br/>
-        <input type="text" class="form-control" name="raw code2" value="<%=ws22.rcode2%>" placeholder="raw code"/><br/>
+        <input type="text" class="form-control" name="nm" value="<%=ws22.nm%>" placeholder="task"/><br/>
+        <input type="date" class="form-control" name="dt" value="<%=ws22.dt%>" placeholder="date"/><br/>
+        <input type="text" class="form-control" name="rc" value="<%=ws22.rc%>" placeholder="raw code"/><br/>
         <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="completed"
-            <% if(ws22.completed2 === true ){ %>
+        <input class="form-check-input" type="checkbox" name="compl"
+            <% if(ws22.compl === true ){ %>
                 checked
             <% } %>    
             >

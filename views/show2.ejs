@@ -8,15 +8,15 @@
             </style>
     </head>
 <body>
-    <h1>Bug Fixes: <%=ws22.name2 %></h1>
-    <p>Bug Name: <%=ws22.name2 %></p>
-    <p>Priority: <%=ws22.priority2 %></p>
-    <p>Task: <%=ws22.description2%></p>
-    <p>Raw Code: <%=ws22.rcode2%></p>
-    <% if (ws22.completed2 === true) { %>
+    <h1>Bug Fixes: <%=ws22.nm %></h1>
+    <p>Bug Name: <%=ws22.nm %></p>
+    <p>Priority: <%=ws22.prio %></p>
+    <p>Task: <%=ws22.des%></p>
+    <p>Raw Code: <%=ws22.rc%></p>
+    <% if (ws22.compl === true) { %>
         <p>Bug Fixed </p>
     <% } else { %>
-        <p>Estimated Fix Date  <%=ws22.date2%></p>
+        <p>Estimated Fix Date  <%=ws22.dt%></p>
     <% } %>
     <button><a href="/ws22">Return to Bug Fix Board</a></button>
 </body>

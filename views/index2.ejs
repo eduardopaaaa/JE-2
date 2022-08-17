@@ -18,13 +18,13 @@
     <table class="table">
         <% for (let i = 0; i < ws22.length; i++) { %>
         <tr>
-            <% if (ws22[i].completed2 === false) { %>
-                <td><%=ws22[i].priority2 %>
-                    <td>ECD: <%= ws22[i].date2 %></td>
-                    <td>Completed: <%=ws22[i].completed2%></td>
+            <% if (ws22[i].compl === false) { %>
+                <td><%=ws22[i].prio %>
+                    <td>ECD: <%= ws22[i].dt %></td>
+                    <td>Completed: <%=ws22[i].compl%></td>
                 <td>
                     <a href="/ws22/<%=ws22[i].id%>">
-                        Task: <%= ws22[i].name2 %>
+                        Task: <%= ws22[i].nm %>
 
                     </a>
                 </td>
@@ -37,10 +37,10 @@
                     </form>
                 </td>
             <% } else { %>
-            <td><%= ws22[i].date2 %>
-                <td><%=ws22[i].completed2%></td>
+            <td><%= ws22[i].dt %>
+                <td><%=ws22[i].compl%></td>
             <td>
-                    <%= ws22[i].name2 %>
+                    <%= ws22[i].nm %>
             </td>
             <td>
                 <button class="btn btn-outline-secondary disabled">Edit</button>

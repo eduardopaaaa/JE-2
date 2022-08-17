@@ -95,10 +95,10 @@ app.put('/ws2/:id', (req, res) => {
 })
 
 app.put('/ws22/:id', (req, res) => {
-  if(req.body.completed2 === 'on'){
-      req.body.completed2 = true;
+  if(req.body.compl === 'on'){
+      req.body.compl = true;
   }else{
-      req.body.completed2 = false;
+      req.body.compl = false;
   }
   Ws22.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedNewWs22) => {
       res.redirect('/ws22')
@@ -144,10 +144,10 @@ app.get('/ws22/:id/edit2', (req, res) => {
     })
 
     app.post('/ws22', (req,res) => {
-      if(req.body.completed2 === 'on'){
-          req.body.completed2 = true;
+      if(req.body.compl === 'on'){
+          req.body.compl = true;
       }else{
-          req.body.completed2 = false;
+          req.body.compl = false;
       }
           Ws22.create(req.body, (error, newWs22) => {
               res.redirect('/ws22')

@@ -3,12 +3,12 @@ const e = require("express");
 const mongoose = require('mongoose');
 
 const ws22Schema = new mongoose.Schema({
-    name2: {type: String, require: true},
-    priority2: {type: String, require: true},
-    description2: {type: String, require: true},
-    rcode2: {type: String, require: true},
-    completed2: {type: Boolean,},
-    date2: {type: String}
+    nm: {type: String, require: true},
+    prio: {type: String, require: true},
+    des: {type: String, require: true},
+    rc: {type: String, require: true},
+    compl: {type: Boolean,},
+    dt: {type: String}
 });
 
 
