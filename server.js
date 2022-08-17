@@ -53,7 +53,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/ws2/cover' , (req, res) => {
+app.get('/' , (req, res) => {
   res.render('cover.ejs');
 });
 
