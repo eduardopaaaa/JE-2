@@ -189,6 +189,10 @@ app.get('/ws2/search', (req, res)=>{
   res.render('search.ejs');
 });
 
+app.get('/ws2/learn', (req, res)=>{
+  res.render('learn.ejs');
+});
+
 //Show
 //Get /todo/:index
     app.get('/ws2/:id', (req, res) => {
