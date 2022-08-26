@@ -1,0 +1,1 @@
+creating a lore site on local host first. Specifically tailored for the book of sorrow
