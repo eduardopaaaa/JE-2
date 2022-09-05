@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors')
-const VG = require('./models/VG.js')
+const VG = require('./models/vg.js')
 const app = express();
 app.use(express.json())
 app.use(cors())
