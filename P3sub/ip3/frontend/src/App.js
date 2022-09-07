@@ -123,9 +123,9 @@ return (
 
         Genre: <input class='form-control' placeholder='FPS-MMO' type='text' onChange={handleNewCardChange}/><br/>
 
-        <input class='form-control' placeholder='Insert Video Game Cover Image' type='url' onChange={handleNewImgChange}/><br/>
+        <input class='form-control' placeholder='Insert Video Game Cover Image' type='url' alt='403 error' onChange={handleNewImgChange}/><br/>
 
-        <input class='form-control' placeholder='Insert Video Game GIF' type='url' onChange={handleNewVideoChange}/><br/>
+        <input class='form-control' placeholder='Insert Video Game GIF' type='url' alt='403 error' onChange={handleNewVideoChange}/><br/>
 
         <input class='btn btn-outline-primary' type='submit' value="SUBMIT"/>
 
@@ -152,7 +152,7 @@ return (
               :
               <div class='container' onClick = {() => {
                 handleToggleComplete(vg)
-              }}> <h2>{vg.game} {vg.playCheck? 'Read' : 'Not Read'} </h2> <h3>{vg.card}</h3> 
+              }}> <h2>{vg.game} {vg.playCheck? 'Played' : 'Not Played'} </h2> <h3>{vg.card}</h3> 
               <h2><img src={vg.image}/></h2> </div>
               }
               <div>
